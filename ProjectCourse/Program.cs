@@ -21,10 +21,13 @@ namespace ProjectCourse
             // The user enters 2 numbers (A and B). Print the solution (5*A+B^2)/(B-A) to the console.
             try
             {
+                Console.WriteLine($"The user enters 2 numbers (A and B). Print the solution (5*A+B^2)/(B-A) to the console");
+                Console.WriteLine($"Write number A:");
                 int A = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine($"Write number B:");
                 int B = Convert.ToInt32(Console.ReadLine());
 
-                Console.WriteLine($"Answer for solution (5*A+B^2)/(B-A)   is:  {(5 * A + B * B) / (B - A)}");
+                Console.WriteLine($"Answer for solution (5*A+B^2)/(B-A) is:  {(5 * A + B * B) / (B - A)}");
             }
             catch(DivideByZeroException e)
             {
@@ -74,31 +77,56 @@ namespace ProjectCourse
         {
             // The user enters 3 non-zero numbers (A, B and C). Print to the console the solution (X value) of the standard linear equation, where A*X+B=C.
 
-            //Console.WriteLine($"Write numbers:");
-            //int A = Convert.ToInt32(Console.ReadLine());
-            //int B = Convert.ToInt32(Console.ReadLine());
-            //int C = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine($"Print to the console the solution (X value) of the standard linear equation, where A*X+B=C");
+            Console.WriteLine($"Write number A:");
+            int A = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine($"Write number B:");
+            int B = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine($"Write number C:");
+            int C = Convert.ToInt32(Console.ReadLine());
+
+
+            Console.WriteLine($" X value is: {(C-B)/A}");
+
 
         }
         static void Task6()
         {
             // The user enters 4 numbers (X1, Y1, X2, Y2) describing the coordinates of 2 points on the coordinate plane. Output the equation of a straight line in the format Y=AX+B passing through these points.
-            //Console.WriteLine($"Write numbers:");
-            //int X1 = Convert.ToInt32(Console.ReadLine());
-            //int X2 = Convert.ToInt32(Console.ReadLine());
-            //int Y1 = Convert.ToInt32(Console.ReadLine());
-            //int Y2 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine($"Output the equation of a straight line in the format Y=AX+B passing through these points.");
+            Console.WriteLine($"Write number X1:");
+            int X1 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine($"Write number X2:");
+            int X2 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine($"Write number Y1:");
+            int Y1 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine($"Write number Y2:");
+            int Y2 = Convert.ToInt32(Console.ReadLine());
+
+            int A = Y2 - Y1 / X2 - X1;
+            int B = (Y2+A)+(X2+A);
+
+
+            Console.WriteLine($"Output format: Y={A}x+{B}");
+
 
         }
         static void Task7()
         {
             // The variable N stores a natural two-digit number (10-99). Write a program that calculates and displays the sum of the digits of n.
+            Console.WriteLine($"The variable N stores a natural two-digit number (10-99). Write a program that calculates and displays the sum of the digits of n.");
+            Console.WriteLine($"Write number N:");
+            int N = Convert.ToInt32(Console.ReadLine());
+            int sum = 0;
+            sum = (sum + N % 10) + (N / 10);
+
+            Console.WriteLine($"the sum is: {sum}");
         }
 
         static void Main(string[] args)
         {
             Console.WriteLine("Course Tasks");
-            Task1();
+            Task7();
         }
     }
 }
